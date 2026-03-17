@@ -13,6 +13,9 @@ async function registerUser(req, res){
         process.env.JWT_SECRET
     );
 
+    // ✅ improved cookie setup
+    res.cookie("token", token);
+
     res.status(201).json({
         message: "user registered successfully",
         user,
